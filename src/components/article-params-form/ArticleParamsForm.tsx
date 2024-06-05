@@ -5,6 +5,7 @@ import { RadioGroup } from '../radio-group';
 import { Select } from '../select';
 import { Separator } from '../separator';
 import { Text } from '../text';
+import clsx from 'clsx';
 import { useOutsideClickClose } from '../select/hooks/useOutsideClickClose';
 
 import {
@@ -88,9 +89,9 @@ export const ArticleParamsForm = ({
 			/>
 			<aside
 				ref={sidebarRef}
-				className={`${styles.container} ${
-					isMenuOpen ? styles.container_open : ''
-				}`}>
+				className={clsx(styles.container, {
+					[styles.container_open]: isMenuOpen,
+				})}>
 				<form
 					className={styles.form}
 					onClick={formClickHandler}
